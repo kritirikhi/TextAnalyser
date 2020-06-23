@@ -18,14 +18,14 @@
         <!-- navbar -->
         {% include 'navbar.html' %}
     </div>
-    <div class='container-fluid' style="background-image: url('../static/images/main3.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center; height:90%;">
+    <div class='container-fluid mb-5' style="background-image: url('../static/images/main3.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center; height:100%;">
         <div class="mask rgba-black-light align-items-center">
             <!-- Content -->
             <div class="container"> 
               <!--Grid row-->
               <div class="row" style='padding-top:78px;'>
                 <!--Grid column-->
-                <div class="col-md-12 mb-3 white-text text-center mt-5">
+                <div class="col-sm-12 mb-3 white-text text-center mt-5">
                   <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown" data-wow-delay="0.3s"><strong>Text Analyser</strong></h1>
                   <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
                   <div style='margin-top: 50px;'>
@@ -36,17 +36,9 @@
                 <!--Grid column-->
               </div>
               <!--Grid row-->
-            </div>
-            <!-- Content -->
-          </div>
-          <!-- Mask & flexbox options-->
-
-          <main>
-            <div class="container">
-              <!--Grid row-->
-              <div class="row py-5">
+                <div class="row">
                 <!--Grid column-->
-                <div class="col-md-12 text-center" style='margin-top: -20px;'>
+                <div class="col-sm-12 text-center">
                   <a class="btn btn-primary btn-lg" href="/" role="button">Play</a>
                   &nbsp
                   <a class="btn btn-primary btn-lg" href="/" role="button">With</a>
@@ -55,42 +47,45 @@
                 </div>
                 <!--Grid column-->
               </div>
-              <!--Grid row-->
             </div>
-          </main>
+            <!-- Content -->
+          </div>
     </div>
+
+    <div class="container mt-5 mb-5">
     
-    <div class='container'>
-        <div class='row mt-5'>
-            <div class='col-md-1 text-center'>
-              
-            </div>
-
-            <div class='col-md-5 text-center'>
-                <a class="btn btn-primary btn-lg" href="/performoperation" role="button" style='width:50%'>Perform Operation</a>
-            </div>
-            &nbsp
-            <div class='col-md-5 text-center'>
-                <a class="btn btn-primary btn-lg" href="/analysecharacters" role="button">Analyse Text Characters</a>
-            </div>
-            
+      <div class="row col-sm center">
+        <div class="col-sm-2">
+        
         </div>
-        <div class='row mt-4    '>
-            <div class='col-md-1 text-center'>
-              
-            </div>
-
-            <div class='col-md-5 text-center'>
-                <a class="btn btn-primary btn-lg" href="/funtext" role="button" style='width:50%'>Fun With Text</a>
-            </div>
-            &nbsp
-            <div class='col-md-5 text-center'>
-                <a class="btn btn-primary btn-lg" href="/extracturl" role="button" style='width:50%'>Extract URL</a>
-            </div>
-            
+        <div class="col-sm-3 mt-5 center">
+            <a class="btn btn-primary btn-lg" style="width:100%" href="/performoperation" role="button" style='width:50%'>Perform Operation</a>
         </div>
+        <div class="col-sm-2">
+                
+        </div>
+        <div class="col-sm-3 mt-5 center">
+            <a class="btn btn-primary btn-lg" style="width:100%" href="/analysecharacters" role="button">Analyse Characters</a>
+        </div>
+
+      </div>
+
+      <div class="row col-sm">
+        <div class="col-sm-2">
+        
+        </div>
+        <div class="col-sm-3 mt-5">
+            <a class="btn btn-primary btn-lg" style="width:100%" href="/funtext" role="button" style='width:50%'>Fun With Text</a>
+        </div>
+        <div class="col-sm-2">
+                
+        </div>
+        <div class="col-sm-3 mt-5">
+            <a class="btn btn-primary btn-lg" style="width:100%" href="/extracturl" role="button">Extract URL</a>
+        </div>
+        
+      </div>
     </div>
-
 <hr>
     <!-- footer -->
         {% include 'footer.html' %}
