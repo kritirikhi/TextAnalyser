@@ -1,4 +1,3 @@
-# from django.http import HttpResponse
 from django.http import *
 from django.shortcuts import *
 
@@ -307,9 +306,26 @@ def extracturloutput(request):
 def worddictionary(request):
     return render(request,'worddictionary.html')
 
+from bs4 import BeautifulSoup as bs
+import sys
+import requests
+
 def calc(request):
-    word = request.GET['word']
-    ans = word[0:2]
+    # word = request.GET['word']
+    # url = "https://www.dictionary.com/browse/freezing"
+    # r = requests.get(url)
+    # soup = bs(r.content,'lxml')
+
+    # header = soup.findAll("span", {"class": "luna-pos"})[0].text
+    # answer_list = soup.findAll("ol")[0]
+    # meanings = answer_list.findChildren("li", recursive=False)
+    # print()
+    # print(word + ": " + header)
+
+    # for (i, meaning) in enumerate(meanings):
+    #     print()
+    #     print(str(i + 1) + ".", meaning.text)
+
     d={}
-    d['ans']=ans
+    d['ans']='kri'
     return JsonResponse(d,safe=False)
