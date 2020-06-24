@@ -25,7 +25,7 @@ SECRET_KEY = '*@66yo87r01cd@d$ga-r^_+ys@nmyavx6&x4#!-m*varaf0(p8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['KritiRikhi.pythonanywhere.com']
 
 
 # Application definition
@@ -54,7 +54,8 @@ ROOT_URLCONF = 'textutils.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['/home/KritiRikhi/TextAnalyser/textutils/templates'],
+        'DIRS': [BASE_DIR + "/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
