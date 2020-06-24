@@ -36,4 +36,5 @@ urlpatterns = [
     path('extracturloutput/',views.extracturloutput,name='extracturloutput'),
     path('worddictionary/',views.worddictionary,name='worddictionary'),
     path('calc/',views.calc,name='calc'),
+    path('wordlimitchecker/',views.wordlimitchecker,name='wordlimitchecker'),
 ]

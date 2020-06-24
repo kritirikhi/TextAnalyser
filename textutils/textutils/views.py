@@ -1,5 +1,9 @@
 from django.http import *
 from django.shortcuts import *
+import math
+from bs4 import BeautifulSoup as bs
+import sys
+import requests
 
 def performoperation(request):
     return render(request,'performoperation.html')
@@ -118,7 +122,6 @@ def performOperationAction(request):
         } 
         return render(request,'analyser.html',d)
 
-
 def analysecharacters(request):
     return render(request,'analysecharacters.html')
 
@@ -176,11 +179,9 @@ def analysecharaction(request):
 
     return render(request,'analysecharresult.html')
 
-
 def funtext(request):
     return render (request,'funtext.html')
 
-import math
 def textfunaction(request):
     textcoming = request.POST.get('textAdded')
 
@@ -306,10 +307,6 @@ def extracturloutput(request):
 def worddictionary(request):
     return render(request,'worddictionary.html')
 
-from bs4 import BeautifulSoup as bs
-import sys
-import requests
-
 def calc(request):
     word = request.GET['word']
     url = "https://dictionary.cambridge.org/dictionary/english/"
@@ -327,3 +324,6 @@ def calc(request):
 
     d={'pos':header,'result':answer_list}
     return JsonResponse(d,safe=False)
+
+def wordlimitchecker(request):
+    return render(request,'wordlimitchecker.html')
