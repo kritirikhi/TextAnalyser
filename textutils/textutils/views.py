@@ -312,20 +312,18 @@ import requests
 
 def calc(request):
     word = request.GET['word']
-    url = "https://www.dictionary.com/browse/freezing"
+    url = "https://dictionary.cambridge.org/dictionary/english/"
+    url+=word
     r = requests.get(url)
     soup = bs(r.content,'lxml')
 
-    header = soup.findAll("span", {"class": "luna-pos"})[0].text
-    answer_list = soup.findAll("ol")[0]
-    meanings = answer_list.findChildren("li", recursive=False)
-    print()
-    print(word + ": " + header)
+    header = soup.findAll("span", {"class": "pos"})
+    if len(header)==0:
+        d={'pos':'' , 'result':''}
+        return JsonResponse(d,safe=False)
 
-    for (i, meaning) in enumerate(meanings):
-        print()
-        print(str(i + 1) + ".", meaning.text)
+    header = soup.findAll("span", {"class": "pos"})[0].text
+    answer_list = soup.findAll("div",{"class":"def-body"})[0].text
 
-    d={}
-    d['ans']='kri'
+    d={'pos':header,'result':answer_list}
     return JsonResponse(d,safe=False)
