@@ -34,4 +34,6 @@ urlpatterns = [
     path('extracturl/',views.extracturl,name='extracturl'),
     path('extracturlaction/',views.extracturlaction,name='extracturlaction'),
     path('extracturloutput/',views.extracturloutput,name='extracturloutput'),
+    path('worddictionary/',views.worddictionary,name='worddictionary'),
+    path('calc/',views.calc,name='calc'),
 ]

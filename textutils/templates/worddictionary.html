@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function test(){
+            var a = document.getElementById('word').value;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function(){
+                if(this.readyState==4 && this.status==200){
+                    var ar =JSON.parse(this.response);
+                    document.getElementById("sp1").innerHTML=ar['ans'];
+                }
+            };
+            xmlhttp.open("GET","/calc?word="+a,true);
+            xmlhttp.send();
+        }
+    
+    </script>
+</head>
+<body>
+    <label> enter word </label>
+    <input type="text" name='word' id='word'>
+    <input type="button" value="click" onclick="test()">
+
+    <span id='sp1'></span>
+
+</body>
+</html>

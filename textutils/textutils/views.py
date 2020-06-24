@@ -1,4 +1,5 @@
-from django.http import HttpResponse
+# from django.http import HttpResponse
+from django.http import *
 from django.shortcuts import *
 
 def performoperation(request):
@@ -302,3 +303,13 @@ def extracturlaction(request):
 
 def extracturloutput(request):
     return render(request,'extracturloutput.html')
+
+def worddictionary(request):
+    return render(request,'worddictionary.html')
+
+def calc(request):
+    word = request.GET['word']
+    ans = word[0:2]
+    d={}
+    d['ans']=ans
+    return JsonResponse(d,safe=False)
