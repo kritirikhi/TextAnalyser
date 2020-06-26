@@ -135,7 +135,6 @@ def analysecharaction(request):
         return HttpResponseRedirect('/analysecharacters')
 
     type = request.POST.get('charAnalyse')
-    print(type)
     if type=="allcount":
         ans = len(textcoming)
         s = "The No Of Characters In The Text Are: "
@@ -291,10 +290,9 @@ def extracturlaction(request):
 
         dict = {}
         dict['url'] = s    
-        print(dict)
+       
         listURLS.append(dict)
 
-    print(listURLS)
 
     d = {
         'ans':listURLS
