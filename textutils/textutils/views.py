@@ -293,7 +293,31 @@ def extracturlaction(request):
        
         listURLS.append(dict)
 
+    idx=0
+    h="http://"
+    while(True):
+        if(idx>=len(result)):
+            break 
 
+        indexhttp = result.find(h,idx,len(result))
+        if(indexhttp==-1):
+            break
+        
+        idx=indexhttp+1
+        indexwww = result.find(w,indexhttp+4,len(result))
+        if(indexwww==-1):
+            break
+
+        s=""
+        idx=indexwww+1 
+        while(indexhttp<len(result) and result[indexhttp]!=' '):
+            s=s+result[indexhttp]
+            indexhttp+=1
+
+        dict = {}
+        dict['url'] = s    
+       
+        listURLS.append(dict)
     d = {
         'ans':listURLS
     }
